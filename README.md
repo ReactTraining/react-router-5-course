@@ -6,4 +6,6 @@ In the mean time, feel free to explore this early version of the course material
 
 If you're wondering what's new in React Router 5? Not a lot except internal optimizations and fixes for React 16.x. So you could also think of this as a React Router 4 course since the API is the same. [See more info on the React Router 5 release](https://reacttraining.com/blog/react-router-v5/)
 
+This is not the real firebase, this is what we're making:
+
 ![Animated Demo](./firebase.gif)
