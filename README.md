@@ -17,6 +17,8 @@ npm install
 npm start
 ```
 
+Then go to [http://localhost:8000](localhost:8000)
+
 ## Fake Database
 
 Just so we can mimic some data and pretend it's asynchronous, there's a `src/database.json`. Feel free to add more "Firebase Projects" if you want.
@@ -34,4 +36,4 @@ In `/src` you'll see:
 - `ui` is where I like to put re-usable "leaf-types" of components
 - `utils` is a catch all for React components that are more utilitarian in nature (and less UI in nature) and other general utils.
 
-Any other folder in `/src` is a section of the site, like `/auth` and `/projects` which coorespond to `localhost:8000/auth` etc. I guess I could organize those into a `/pages` folder, but who likes deep nesting anyways?
+Any other folders in `/src` is a section of the site, like `/auth` and `/projects` which coorespond to `localhost:8000/auth` etc. I guess I could organize those into a `/pages` folder, but who likes deep nesting anyways?
