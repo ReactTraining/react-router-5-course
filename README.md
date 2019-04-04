@@ -17,7 +17,7 @@ npm install
 npm start
 ```
 
-Then go to [http://localhost:8000](localhost:8000)
+Then go to [localhost:8000](http://localhost:8000)
 
 ## Fake Database
 
