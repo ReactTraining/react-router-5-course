@@ -15,7 +15,7 @@ const AccountSubLayout = ({ history }) => {
   return (
     <div className="account-sub-layout">
       <Panel className="panel-welcome-to-firebase">
-        <h1 className="heading-1">Welcome to Firebase!</h1>
+        <h1 className="heading-1">Almost Firebase!</h1>
         <p>
           Tools from Google for developing great apps, engaging with
           <br />
