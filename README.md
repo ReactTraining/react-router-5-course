@@ -8,6 +8,30 @@ If you're wondering what's new in React Router 5? Not a lot except internal opti
 
 This is not the real Firebase, this is what we're making:
 
-<div style="text-align: center">
-  <img alt="Animated Demo" src="./firebase.gif" />
-</div>
+![Animated Demo](./firebase.gif)
+
+## Install
+
+```bash
+npm install
+npm start
+```
+
+## Fake Database
+
+Just so we can mimic some data and pretend it's asynchronous, there's a `src/database.json`. Feel free to add more "Firebase Projects" if you want.
+
+## The CSS
+
+I used `className`. Who cares, it keeps the styling clutter out of the JS files since this is teaching material for routing.
+
+## Code Organization
+
+In `/src` you'll see:
+
+- `layouts` for highly re-usable app-wide layouts
+- `styles` for Sass modules
+- `ui` is where I like to put re-usable "leaf-types" of components
+- `utils` is a catch all for React components that are more utilitarian in nature (and less UI in nature) and other general utils.
+
+Any other folder in `/src` is a section of the site, like `/auth` and `/projects` which coorespond to `localhost:8000/auth` etc. I guess I could organize those into a `/pages` folder, but who likes deep nesting anyways?
