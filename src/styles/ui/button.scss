@@ -1,0 +1,33 @@
+a.button {
+  text-decoration: none;
+}
+
+button {
+  color: $blue;
+  // font: ${theme.copy.fontFamily};
+  &:not(.button):hover {
+    text-decoration: underline;
+  }
+}
+
+.button,
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button {
+  background-color: $blue;
+  color: #fff;
+  letter-spacing: 0.2em;
+  padding: 0.7em 1.8em;
+  border-radius: 0.4rem;
+
+  &:hover,
+  &:focus {
+    background-color: darken($blue, 5%);
+  }
+}

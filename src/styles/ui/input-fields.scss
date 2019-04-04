@@ -1,0 +1,14 @@
+// Just enough styling to get the job done. Don't take
+// this too seriously
+
+[type='text'],
+[type='password'] {
+  display: block;
+  width: 25em;
+  padding: 0.5em;
+  border: 1px solid $gray;
+  &:focus {
+    outline: none;
+    border-color: $blue;
+  }
+}

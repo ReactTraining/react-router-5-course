@@ -1,0 +1,44 @@
+.page-header {
+  background-color: $blue;
+  color: #fff;
+
+  // Offset padding of <main>
+  margin: -2rem -2rem 2rem -2rem;
+  padding: 1rem 2rem;
+
+  .plan {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    padding: 0.5em 1.2em;
+    border-radius: 5em;
+    background-color: rgba(#fff, 0.2);
+  }
+
+  .add-app {
+    border-radius: 5em;
+    padding: 0.3em 1em;
+    background-color: rgba(#000, 0.1);
+  }
+}
+
+.page-header-tabs {
+  font-size: 0.9em;
+  // Offsets padding of container
+  margin-bottom: -1rem;
+  a {
+    display: inline-block;
+    border-bottom: 3px solid transparent;
+    color: rgba(#fff, 0.6);
+    padding: 0.5em 0;
+
+    + a {
+      margin-left: 1.5em;
+    }
+
+    &.active {
+      border-bottom-color: #fff;
+      color: #fff;
+    }
+  }
+}

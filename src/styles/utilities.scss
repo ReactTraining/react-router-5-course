@@ -1,0 +1,85 @@
+$gutter: 1em;
+$gutter-small: 0.6em;
+
+/**
+ * Layout
+ */
+
+.block {
+  display: block;
+}
+
+.spacing-small {
+  @include spacing(0.2em);
+}
+.spacing-medium {
+  @include spacing($gutter-small);
+}
+.spacing {
+  @include spacing($gutter);
+}
+
+.horizontal-spacing-small {
+  @include spacing(0.2em, true);
+}
+.horizontal-spacing-medium {
+  @include spacing($gutter-small, true);
+}
+.horizontal-spacing {
+  @include spacing($gutter, true);
+}
+
+.vertical-middle > * {
+  vertical-align: middle;
+}
+
+.left-content {
+  text-align: left;
+}
+.center-content {
+  text-align: center;
+}
+.right-content {
+  text-align: right;
+}
+
+.center-blocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/**
+ * Copy
+ */
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+  display: block;
+}
+
+.heading-1 {
+  font-size: 2rem;
+}
+
+.heading-2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.heading-3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.heading-4 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.text-light-tint {
+  color: rgba(#fff, 0.6);
+}

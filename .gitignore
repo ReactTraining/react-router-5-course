@@ -1,0 +1,6 @@
+*.log
+.env
+.env.production
+node_modules
+build
+npm-debug.log

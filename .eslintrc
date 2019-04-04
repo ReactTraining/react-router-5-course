@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "no-console": "off",
+    "react/no-children-prop": "off",
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/no-unescaped-entities": "off"
+  }
+}

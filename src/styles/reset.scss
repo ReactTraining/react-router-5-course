@@ -1,0 +1,59 @@
+// ****************************************
+//   Inherited Styles
+// ****************************************
+
+// See this explanation for details
+// https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+html {
+  box-sizing: border-box;
+  color: #888;
+  font-family: 'Roboto';
+  font-size: 12pt;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// ****************************************
+//   Resets
+// ****************************************
+
+body {
+  margin: 0;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+strong {
+  color: #222;
+}
+
+/****************************************
+  Misc
+*****************************************/
+
+// Find class names that are undefined (an error from JS)
+.undefined {
+  background-color: lime !important;
+}

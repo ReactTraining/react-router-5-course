@@ -1,0 +1,28 @@
+.project-sub-layout {
+  height: 100vh;
+  display: flex;
+}
+
+.project-primary-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 2em;
+  }
+}
+
+.project-nav {
+  font-size: 0.9em;
+  background-color: $blue;
+  height: $nav-height;
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
+  &:hover {
+    color: #fff;
+  }
+}

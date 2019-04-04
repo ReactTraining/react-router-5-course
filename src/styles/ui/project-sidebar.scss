@@ -1,0 +1,50 @@
+.project-sidebar {
+  width: 16em;
+  // Offset Nav Height
+  padding-top: $nav-height;
+  background-color: #262f3e;
+  border-left: 1px solid #404854;
+
+  [class*='heading-'] {
+    color: #fff;
+  }
+
+  nav {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #404854;
+    padding: 1.5em;
+
+    &:first-child {
+      border-top: 1px solid #404854;
+    }
+
+    &.overview a:not(.active) {
+      color: #babdc0;
+    }
+
+    a.active {
+      color: #4fc3f7;
+    }
+
+    &.open {
+      background-color: #19212b;
+
+      a {
+        color: #babdc0;
+        font-size: 1.2em;
+        display: block;
+        margin-left: 1em;
+        &.active {
+          color: #4fc3f7;
+        }
+      }
+    }
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
