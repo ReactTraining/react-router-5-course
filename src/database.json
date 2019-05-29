@@ -1,8 +1,12 @@
 {
   "projects": [
     {
-      "id": "my-firebase-project",
-      "name": "My Firebase Project"
+      "id": "react-training",
+      "name": "ReactTraining.com"
+    },
+    {
+      "id": "secret-project",
+      "name": "Secret Project"
     }
   ]
 }
