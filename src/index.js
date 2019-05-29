@@ -6,7 +6,6 @@ import { AuthUserProvider } from './utils/AuthUser'
 import AuthorizedRoute from './utils/AuthorizedRoute'
 import UnauthorizedLayout from './layouts/UnauthorizedLayout'
 import AuthorizedLayout from './layouts/AuthorizedLayout'
-
 import './styles/main.scss'
 
 const App = () => (

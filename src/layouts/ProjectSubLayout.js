@@ -13,7 +13,13 @@ const ProjectSubLayout = ({ match }) => {
   const { projectId } = match.params
 
   useEffect(() => {
-    getProject(projectId).then(setProject)
+    let isCurrent = true
+    getProject(projectId).then(project => {
+      if (isCurrent) {
+        setProject(project)
+      }
+    })
+    return () => (isCurrent = false)
   }, [projectId])
 
   return (

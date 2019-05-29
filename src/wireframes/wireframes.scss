@@ -1,0 +1,128 @@
+.app {
+  background-image: linear-gradient(45deg, #fafafa 25%, transparent 25%),
+    linear-gradient(-45deg, #fafafa 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fafafa 75%),
+    linear-gradient(-45deg, transparent 75%, #fafafa 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+
+  padding: 2em 5em;
+}
+
+$blue: #0099e8;
+$green: #1cd41c;
+
+@mixin box($color, $top: true, $right: true, $bottom: true, $left: true) {
+  @if $top {
+    border-top: 5px dashed $color;
+  }
+  @if $right {
+    border-right: 5px dashed $color;
+  }
+  @if $bottom {
+    border-bottom: 5px dashed $color;
+  }
+  @if $left {
+    border-left: 5px dashed $color;
+  }
+}
+
+.authorized-layout {
+  min-height: 50vh;
+  > header {
+    @include box($blue);
+    padding: 2em;
+  }
+  > footer {
+    @include box($blue);
+    padding: 2em;
+    margin-top: 1em;
+  }
+  > .content {
+    @include box($blue);
+    display: flex;
+    min-height: 100px;
+    padding: 1em;
+    margin-top: 1em;
+  }
+  a + a {
+    margin-left: 2em;
+  }
+}
+
+.unauthorized-layout {
+  display: flex;
+  padding: 3em;
+  main {
+    @include box($blue);
+    margin: auto;
+    width: 50%;
+    height: 200px;
+    padding: 1em;
+  }
+}
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  a {
+    color: red;
+  }
+  > aside {
+    width: 12em;
+    @include box(red);
+  }
+  > .content {
+    flex: 1;
+    @include box(red, true, true, true, false);
+    > nav {
+      @include box(red, false, false, true, false);
+      padding: 1em;
+    }
+    > main {
+      padding: 1em;
+      min-height: 10em;
+    }
+  }
+}
+
+.products-layout {
+  width: 100%;
+  main {
+    @include box(red);
+    padding: 1em;
+    overflow: hidden;
+    > div {
+      @include box(red);
+      width: 100px;
+      height: 100px;
+      float: left;
+      margin-right: 1em;
+    }
+  }
+}
+
+.settings-page {
+  display: flex;
+  padding: 1em;
+  @include box($green);
+  > div {
+    flex: 1;
+    min-height: 10em;
+  }
+  > :first-child {
+    @include box($green);
+  }
+  > :last-child {
+    @include box($green, true, true, true, false);
+  }
+}
+
+.search-results-page {
+  > div + div {
+    margin-top: 1em;
+  }
+  > div {
+    padding: 2em;
+    @include box($green);
+  }
+}

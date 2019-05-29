@@ -11,6 +11,7 @@
     "no-console": "off",
     "react/no-children-prop": "off",
     "jsx-quotes": ["error", "prefer-double"],
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "no-unused-vars": "off"
   }
 }

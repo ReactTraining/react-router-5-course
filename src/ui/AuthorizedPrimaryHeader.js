@@ -5,6 +5,7 @@ import { AuthUserContext } from '../utils/AuthUser'
 
 const AuthorizedPrimaryHeader = () => {
   const { logout } = useContext(AuthUserContext)
+
   return (
     <header className="authorized-primary-header">
       <Route

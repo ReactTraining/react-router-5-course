@@ -9,7 +9,13 @@ const AccountSubLayout = ({ history }) => {
   const [projects, setProjects] = useState(false)
 
   useEffect(() => {
-    getProjects().then(setProjects)
+    let isCurrent = true
+    getProjects().then(projects => {
+      if (isCurrent) {
+        setProjects(projects)
+      }
+    })
+    return () => (isCurrent = false)
   }, [])
 
   return (
@@ -42,15 +48,12 @@ const AccountSubLayout = ({ history }) => {
             </Card>
             {Array.isArray(projects) &&
               projects.map(project => (
-                <Card
-                  key={project.id}
-                  className="card-recent-project spacing-small"
-                  style={{ height: '14em', cursor: 'pointer' }}
-                  role="link"
-                  onClick={() => history.push(`/projects/${project.id}`)}>
-                  <h1 className="heading-3">{project.name}</h1>
-                  <div>{project.id}</div>
-                </Card>
+                <div role="link" key={project.id} onClick={() => history.push(`/projects/${project.id}`)}>
+                  <Card className="card-recent-project spacing-small" style={{ height: '14em', cursor: 'pointer' }}>
+                    <h1 className="heading-3">{project.name}</h1>
+                    <div>{project.id}</div>
+                  </Card>
+                </div>
               ))}
           </Tiles>
         </div>
