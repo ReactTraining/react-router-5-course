@@ -1,25 +1,8 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 import Panel from '../ui/Panel'
 import Card from '../ui/Card'
-import { AuthUserContext } from '../utils/AuthUser'
 
-const Login = ({ history }) => {
-  const { login } = useContext(AuthUserContext)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState()
-
-  function handleSubmit(e) {
-    e.preventDefault()
-
-    if (username === 'react' && password === 'react') {
-      login()
-      history.push('/projects')
-    } else {
-      setErrorMessage('Invalid')
-    }
-  }
-
+const Login = () => {
   return (
     <Panel>
       <Card style={{ minHeight: '10em' }}>
@@ -31,10 +14,9 @@ const Login = ({ history }) => {
         <p>
           The username is <strong>react</strong> and the password is <strong>react</strong>
         </p>
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <form onSubmit={handleSubmit} className="spacing">
-          <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} required />
-          <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} required />
+        <form className="spacing">
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
           <button type="submit" className="button">
             Login
           </button>
