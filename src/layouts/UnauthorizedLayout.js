@@ -5,7 +5,7 @@ import Login from '../auth/Login'
 const UnauthorizedLayout = ({ match }) => (
   <div className="app unauthorized-layout">
     <Switch>
-      <Route path={match.url} component={Login} />
+      <Route path="/auth" component={Login} />
     </Switch>
   </div>
 )

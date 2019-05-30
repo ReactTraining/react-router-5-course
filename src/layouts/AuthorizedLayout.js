@@ -8,8 +8,8 @@ const AuthorizedLayout = ({ match }) => (
   <div className="app authorized-layout">
     <AuthorizedPrimaryHeader />
     <Switch>
-      <Route path={match.url} exact component={AccountSubLayout} />
-      <Route path={`${match.url}/:projectId`} component={ProjectSubLayout} />
+      <Route path="/projects" exact component={AccountSubLayout} />
+      <Route path="projects/:projectId" component={ProjectSubLayout} />
     </Switch>
   </div>
 )
