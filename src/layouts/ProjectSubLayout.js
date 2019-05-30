@@ -32,11 +32,11 @@ const ProjectSubLayout = ({ match }) => {
           </nav>
           <main>
             <Switch>
-              <Route path={`${match.url}/overview`} component={Overview} />
-              <Route path={`${match.url}/authentication`} component={AuthenticationLayout} />
-              <Route path={`${match.url}/database`} exact component={DatabaseHome} />
-              <Route path={`${match.url}/database/:databaseType`} component={DatabaseLayout} />
-              <Redirect to={`${match.url}/overview`} />
+              <Route path={`${match.path}/overview`} component={Overview} />
+              <Route path={`${match.path}/authentication`} component={AuthenticationLayout} />
+              <Route path={`${match.path}/database`} exact component={DatabaseHome} />
+              <Route path={`${match.path}/database/:databaseType`} component={DatabaseLayout} />
+              <Redirect to={`${match.path}/overview`} />
             </Switch>
           </main>
         </div>
