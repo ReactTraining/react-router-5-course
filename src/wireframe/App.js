@@ -22,8 +22,10 @@ const AuthorizedLayout = () => (
       <Link to="/auth">Logout</Link>
     </header>
     <div className="content">
-      <Route path="/dashboard" component={DashboardLayout} />
-      <Route path="/products" component={ProductsLayout} />
+      <Switch>
+        <Route path="/dashboard" component={DashboardLayout} />
+        <Route path="/products" component={ProductsLayout} />
+      </Switch>
     </div>
     <footer />
   </div>
@@ -46,8 +48,11 @@ const DashboardLayout = () => (
         <Link to="/dashboard/search">Search</Link>
       </nav>
       <main>
-        <Route path="/dashboard/settings" component={SettingsPage} />
-        <Route path="/dashboard/search" component={SearchResultsPage} />
+        <Switch>
+          <Route path="/dashboard/settings" component={SettingsPage} />
+          <Route path="/dashboard/search" component={SearchResultsPage} />
+          <Redirect to="/dashboard/settings" />
+        </Switch>
       </main>
     </div>
   </div>
