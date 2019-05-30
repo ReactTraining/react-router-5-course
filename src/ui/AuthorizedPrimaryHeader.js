@@ -1,11 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import classnames from 'classnames'
-import { AuthUserContext } from '../utils/AuthUser'
 
 const AuthorizedPrimaryHeader = () => {
-  const { logout } = useContext(AuthUserContext)
-
   return (
     <header className="authorized-primary-header">
       <Route
@@ -19,9 +16,7 @@ const AuthorizedPrimaryHeader = () => {
         )}
       />
       <nav className="primary-nav">
-        <button className="logout text-light-tint" onClick={logout}>
-          Logout
-        </button>
+        <button className="logout text-light-tint">Logout</button>
         <div className="avatar" />
       </nav>
     </header>
