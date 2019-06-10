@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Redirect, Route, Link } from 'react-router-dom'
 
 import './wireframes.scss'
 
@@ -51,7 +51,7 @@ const DashboardLayout = () => (
         <Switch>
           <Route path="/dashboard/settings" component={SettingsPage} />
           <Route path="/dashboard/search" component={SearchResultsPage} />
-          <Redirect to="/dashboard/settings" />
+          <Route component={NotFound} />
         </Switch>
       </main>
     </div>
