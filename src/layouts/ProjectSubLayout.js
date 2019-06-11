@@ -36,7 +36,7 @@ const ProjectSubLayout = ({ match }) => {
               <Route path="/projects/:projectId/authentication" component={AuthenticationLayout} />
               <Route path="/projects/:projectId/database" exact component={DatabaseHome} />
               <Route path="/projects/:projectId/database/:databaseType" component={DatabaseLayout} />
-              <Redirect to={`${match.url}/overview`} />
+              <Redirect to="/projects/:projectId/overview" />
             </Switch>
           </main>
         </div>

@@ -4,19 +4,19 @@ import { Link, withRouter } from 'react-router-dom'
 const ProjectSidebar = ({ match }) => (
   <aside className="project-sidebar">
     <nav className="overview">
-      <Link to={`${match.url}/overview`} className="heading-4">
+      <Link to="/projects/:projectId/overview" className="heading-4">
         Project Overview
       </Link>
     </nav>
     <nav className="open spacing">
       <h1 className="heading-4">Develop</h1>
       <div className="spacing-medium">
-        <Link to={`${match.url}/authentication`}>Authentication</Link>
-        <Link to={`${match.url}/database`}>Database</Link>
-        <Link to={`${match.url}/storage`}>Storage</Link>
-        <Link to={`${match.url}/hosting`}>Hosting</Link>
-        <Link to={`${match.url}/functions`}>Functions</Link>
-        <Link to={`${match.url}/ml-kit`}>ML Kit</Link>
+        <Link to="/projects/:projectId/authentication">Authentication</Link>
+        <Link to="/projects/:projectId/database">Database</Link>
+        <Link to="/projects/:projectId/storage">Storage</Link>
+        <Link to="/projects/:projectId/hosting">Hosting</Link>
+        <Link to="/projects/:projectId/functions">Functions</Link>
+        <Link to="/projects/:projectId/ml-kit">ML Kit</Link>
       </div>
     </nav>
     <nav className="spacing-small">

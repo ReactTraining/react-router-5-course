@@ -22,7 +22,7 @@ const DatabaseLayout = ({ match }) => {
           <Route path="/projects/:projectId/database/:databaseType/data" component={Data} />
           <Route path="/projects/:projectId/database/:databaseType/rules" component={Rules} />
           <Route path="/projects/:projectId/database/:databaseType/indexes" component={DataIndexes} />
-          <Redirect to={`${match.url}/data`} />
+          <Redirect to="/projects/:projectId/database/:databaseType/data" />
         </Switch>
       </Panel>
     </Fragment>
