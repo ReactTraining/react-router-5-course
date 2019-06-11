@@ -7,22 +7,22 @@ import Data from './Data'
 import Rules from './Rules'
 import DataIndexes from './DataIndexes'
 
-const DatabaseLayout = () => {
+const DatabaseLayout = ({ match }) => {
   return (
     <Fragment>
       <PageHeader title="Database" useMaxWidth={false}>
         <PageHeaderTabs>
-          <Link to="/projects/:projectId/database/data">Data</Link>
-          <Link to="/projects/:projectId/database/rules">Rules</Link>
-          <Link to="/projects/:projectId/database/indexes">Indexes</Link>
+          <Link to={`${match.url}/data`}>Data</Link>
+          <Link to={`${match.url}/rules`}>Rules</Link>
+          <Link to={`${match.url}/indexes`}>Indexes</Link>
         </PageHeaderTabs>
       </PageHeader>
       <Panel>
         <Switch>
-          <Route path="/projects/:projectId/database/data" component={Data} />
-          <Route path="/projects/:projectId/database/rules" component={Rules} />
-          <Route path="/projects/:projectId/database/indexes" component={DataIndexes} />
-          <Redirect to="/projects/:projectId/database/data" />
+          <Route path="/projects/:projectId/database/:databaseType/data" component={Data} />
+          <Route path="/projects/:projectId/database/:databaseType/rules" component={Rules} />
+          <Route path="/projects/:projectId/database/:databaseType/indexes" component={DataIndexes} />
+          <Redirect to={`${match.url}/data`} />
         </Switch>
       </Panel>
     </Fragment>
