@@ -2,9 +2,9 @@ import React from 'react'
 import Panel from '../ui/Panel'
 import Card from '../ui/Card'
 
-const Login = () => {
+const Login = ({ history }) => {
   const handleSubmit = event => {
-    // we're doing nothing
+    history.push('/projects')
   }
 
   return (
