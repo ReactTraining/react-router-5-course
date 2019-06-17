@@ -4,6 +4,7 @@ import Card from '../ui/Card'
 
 const Login = ({ history }) => {
   const handleSubmit = event => {
+    event.preventDefault()
     history.push('/projects')
   }
 
