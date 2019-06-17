@@ -3,6 +3,10 @@ import Panel from '../ui/Panel'
 import Card from '../ui/Card'
 
 const Login = () => {
+  const handleSubmit = event => {
+    // we're doing nothing
+  }
+
   return (
     <Panel>
       <Card style={{ minHeight: '10em' }}>
@@ -14,7 +18,7 @@ const Login = () => {
         <p>
           The username is <strong>react</strong> and the password is <strong>react</strong>
         </p>
-        <form className="spacing">
+        <form className="spacing" onSubmit={handleSubmit}>
           <input type="text" placeholder="Username" required />
           <input type="password" placeholder="Password" required />
           <button type="submit" className="button">
