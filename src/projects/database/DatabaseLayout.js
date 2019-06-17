@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Switch, Route, Redirect, Link } from 'react-router-dom'
+import { Switch, Route, Redirect, NavLink } from 'react-router-dom'
 import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
 import { PageHeaderTabs, Tab } from '../../ui/PageHeaderTabs'
@@ -12,16 +12,22 @@ const DatabaseLayout = ({ match }) => {
     <Fragment>
       <PageHeader title="Database" useMaxWidth={false}>
         <PageHeaderTabs>
-          <Link to={`${match.url}/data`}>Data</Link>
-          <Link to={`${match.url}/rules`}>Rules</Link>
-          <Link to={`${match.url}/indexes`}>Indexes</Link>
+          <NavLink activeClassName="active" to={`${match.url}/data`}>
+            Data
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/rules`}>
+            Rules
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/indexes`}>
+            Indexes
+          </NavLink>
         </PageHeaderTabs>
       </PageHeader>
       <Panel>
         <Switch>
-          <Route path={`{match.path}/data`} component={Data} />
-          <Route path={`{match.path}/rules`} component={Rules} />
-          <Route path={`{match.path}/indexes`} component={DataIndexes} />
+          <Route path={`${match.path}/data`} component={Data} />
+          <Route path={`${match.path}/rules`} component={Rules} />
+          <Route path={`${match.path}/indexes`} component={DataIndexes} />
           <Redirect to={`${match.path}/data`} />
         </Switch>
       </Panel>

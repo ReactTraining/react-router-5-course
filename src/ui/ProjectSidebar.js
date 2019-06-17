@@ -1,23 +1,35 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 const ProjectSidebar = ({ match }) => {
   return (
     <aside className="project-sidebar">
       <nav className="overview">
-        <Link to={`${match.url}/overview`} className="heading-4">
+        <NavLink activeClassName="active" to={`${match.url}/overview`} className="heading-4">
           Project Overview
-        </Link>
+        </NavLink>
       </nav>
       <nav className="open spacing">
         <h1 className="heading-4">Develop</h1>
         <div className="spacing-medium">
-          <Link to={`${match.url}/authentication`}>Authentication</Link>
-          <Link to={`${match.url}/database`}>Database</Link>
-          <Link to={`${match.url}/storage`}>Storage</Link>
-          <Link to={`${match.url}/hosting`}>Hosting</Link>
-          <Link to={`${match.url}/functions`}>Functions</Link>
-          <Link to={`${match.url}/ml-kit`}>ML Kit</Link>
+          <NavLink activeClassName="active" to={`${match.url}/authentication`}>
+            Authentication
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/database`}>
+            Database
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/storage`}>
+            Storage
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/hosting`}>
+            Hosting
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/functions`}>
+            Functions
+          </NavLink>
+          <NavLink activeClassName="active" to={`${match.url}/ml-kit`}>
+            ML Kit
+          </NavLink>
         </div>
       </nav>
       <nav className="spacing-small">
