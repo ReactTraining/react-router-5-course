@@ -19,10 +19,10 @@ const DatabaseLayout = ({ match }) => {
       </PageHeader>
       <Panel>
         <Switch>
-          <Route path="/projects/:projectId/database/:databaseType/data" component={Data} />
-          <Route path="/projects/:projectId/database/:databaseType/rules" component={Rules} />
-          <Route path="/projects/:projectId/database/:databaseType/indexes" component={DataIndexes} />
-          <Redirect to="/projects/:projectId/database/:databaseType/data" />
+          <Route path={`{match.path}/data`} component={Data} />
+          <Route path={`{match.path}/rules`} component={Rules} />
+          <Route path={`{match.path}/indexes`} component={DataIndexes} />
+          <Redirect to={`${match.path}/data`} />
         </Switch>
       </Panel>
     </Fragment>
