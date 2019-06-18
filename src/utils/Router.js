@@ -6,11 +6,7 @@ import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 const Router = ({ children }) => (
   <BrowserRouter>
     <Route
-      render={({
-        history: {
-          location: { pathname, search, hash },
-        },
-      }) =>
+      render={({ location: { pathname, search, hash } }) =>
         pathname !== '/' && pathname.slice(-1) === '/' ? (
           <Redirect to={`${pathname.slice(0, -1)}${search}${hash}`} />
         ) : (
