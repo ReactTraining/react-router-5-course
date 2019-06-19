@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Cookies from 'js-cookie'
 
-export const AuthUserContext = React.createContext()
+const AuthUserContext = React.createContext()
 
 // So we don't conflict with your localhost
 const cookieName = 'RR5CourseLogged'
@@ -21,4 +21,8 @@ export const AuthUserProvider = ({ children }) => {
   }
 
   return <AuthUserContext.Provider value={{ logged, login, logout }}>{children}</AuthUserContext.Provider>
+}
+
+export const useAuthUser = () => {
+  return useContext(AuthUserContext)
 }

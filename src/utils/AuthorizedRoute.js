@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { AuthUserContext } from './AuthUser'
+import { useAuthUser } from './AuthUser'
 
 const AuthorizedRoute = ({ component, history, ...rest }) => {
-  const { logged } = useContext(AuthUserContext)
+  const { logged } = useAuthUser()
 
   if (logged === null) return <div>Loading...</div>
   if (logged !== true) return <Redirect push to="/auth" />

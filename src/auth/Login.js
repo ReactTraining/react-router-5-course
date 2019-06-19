@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import Panel from '../ui/Panel'
 import Card from '../ui/Card'
-import { AuthUserContext } from '../utils/AuthUser'
+import { useAuthUser } from '../utils/AuthUser'
 
 const Login = ({ history }) => {
-  const { login } = useContext(AuthUserContext)
+  const { login } = useAuthUser()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState()

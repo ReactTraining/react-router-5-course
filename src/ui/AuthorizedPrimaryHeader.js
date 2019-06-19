@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import classnames from 'classnames'
-import { AuthUserContext } from '../utils/AuthUser'
+import { useAuthUser } from '../utils/AuthUser'
 
 const AuthorizedPrimaryHeader = () => {
-  const { logout } = useContext(AuthUserContext)
+  const { logout } = useAuthUser()
 
   return (
     <header className="authorized-primary-header">
