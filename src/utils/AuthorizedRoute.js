@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { useAuthUser } from './AuthUser'
 
-const AuthorizedRoute = ({ component, history, ...rest }) => {
+const AuthorizedRoute = ({ component, ...rest }) => {
   const { logged } = useAuthUser()
 
   if (logged === null) return <div>Loading...</div>
