@@ -8,19 +8,19 @@ const cookieName = 'RR5CourseLogged'
 
 export const AuthUserProvider = ({ children }) => {
   const cookieLogged = Cookies.getJSON(cookieName)
-  const [logged, setLogged] = useState(cookieLogged ? cookieLogged.logged : false)
+  const [logged, setLoggedState] = useState(cookieLogged ? cookieLogged.logged : false)
 
-  function login() {
-    Cookies.set(cookieName, { logged: true })
-    setLogged(true)
+  const setLogged = logged => {
+    if (logged) {
+      Cookies.set(cookieName, { logged: true })
+    } else {
+      Cookies.remove(cookieName)
+    }
+
+    setLoggedState(logged)
   }
 
-  function logout() {
-    Cookies.remove(cookieName)
-    setLogged(false)
-  }
-
-  return <AuthUserContext.Provider value={{ logged, login, logout }}>{children}</AuthUserContext.Provider>
+  return <AuthUserContext.Provider value={{ logged, setLogged }}>{children}</AuthUserContext.Provider>
 }
 
 export const useAuthUser = () => {

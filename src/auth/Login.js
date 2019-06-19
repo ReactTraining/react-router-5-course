@@ -1,19 +1,36 @@
 import React, { useState } from 'react'
 import Panel from '../ui/Panel'
 import Card from '../ui/Card'
+import { useAuthUser } from '../utils/AuthUser'
+
+// Fake API Network Call
+const apiLogin = (username, password) => {
+  return new Promise((resolve, reject) => {
+    if (username === 'react' && password === 'react') {
+      resolve()
+    } else {
+      reject()
+    }
+  })
+}
 
 const Login = ({ history }) => {
+  const { setLogged } = useAuthUser()
   const [errorMessage, setErrorMessage] = useState()
 
   function handleSubmit(e) {
     e.preventDefault()
     const [usernameNode, passwordNode] = e.target.elements
 
-    if (usernameNode.value === 'react' && passwordNode.value === 'react') {
-      history.push('/projects')
-    } else {
-      setErrorMessage('Invalid')
-    }
+    apiLogin(usernameNode.value, passwordNode.value)
+      .then(() => {
+        setLogged(true)
+        history.push('/projects')
+      })
+      .catch(() => {
+        setLogged(false)
+        setErrorMessage('Invalid')
+      })
   }
 
   return (

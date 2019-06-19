@@ -1,8 +1,11 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import classnames from 'classnames'
+import { useAuthUser } from '../utils/AuthUser'
 
 const AuthorizedPrimaryHeader = () => {
+  const { setLogged } = useAuthUser()
+
   return (
     <header className="authorized-primary-header">
       <Route
@@ -16,7 +19,9 @@ const AuthorizedPrimaryHeader = () => {
         )}
       />
       <nav className="primary-nav">
-        <button className="logout text-light-tint">Logout</button>
+        <button onClick={() => setLogged(false)} className="logout text-light-tint">
+          Logout
+        </button>
         <div className="avatar" />
       </nav>
     </header>
