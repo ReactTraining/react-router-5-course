@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 function Contact() {
   return <h1>Contact Page</h1>
@@ -13,8 +13,10 @@ function Home() {
 const App = () => (
   <BrowserRouter>
     <div>
-      <Route path="/" component={Home} />
-      <Route path="/contact" component={Contact} />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
     </div>
   </BrowserRouter>
 )
