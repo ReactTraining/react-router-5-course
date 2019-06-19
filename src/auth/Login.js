@@ -3,9 +3,17 @@ import Panel from '../ui/Panel'
 import Card from '../ui/Card'
 
 const Login = ({ history }) => {
-  const handleSubmit = event => {
-    event.preventDefault()
-    history.push('/projects')
+  const [errorMessage, setErrorMessage] = useState()
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const [usernameNode, passwordNode] = e.target.elements
+
+    if (usernameNode.value === 'react' && passwordNode.value === 'react') {
+      history.push('/projects')
+    } else {
+      setErrorMessage('Invalid')
+    }
   }
 
   return (
@@ -19,6 +27,7 @@ const Login = ({ history }) => {
         <p>
           The username is <strong>react</strong> and the password is <strong>react</strong>
         </p>
+        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <form className="spacing" onSubmit={handleSubmit}>
           <input type="text" placeholder="Username" required />
           <input type="password" placeholder="Password" required />
