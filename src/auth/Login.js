@@ -5,14 +5,13 @@ import { useAuthUser } from '../utils/AuthUser'
 
 const Login = ({ history }) => {
   const { login } = useAuthUser()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState()
 
   function handleSubmit(e) {
     e.preventDefault()
+    const [usernameNode, passwordNode] = e.target.elements
 
-    if (username === 'react' && password === 'react') {
+    if (usernameNode.value === 'react' && passwordNode.value === 'react') {
       login()
       history.push('/projects')
     } else {
@@ -33,8 +32,8 @@ const Login = ({ history }) => {
         </p>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <form onSubmit={handleSubmit} className="spacing">
-          <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} required />
-          <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} required />
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
           <button type="submit" className="button">
             Login
           </button>
