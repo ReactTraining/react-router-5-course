@@ -5,20 +5,28 @@ import UnauthorizedLayout from './layouts/UnauthorizedLayout'
 import AuthorizedLayout from './layouts/AuthorizedLayout'
 import './styles/main.scss'
 
-const App = () => {
+const Router = ({ children }) => {
   return (
     <BrowserRouter>
-      <Route path="/auth" component={UnauthorizedLayout} />
-      <Route path="/projects">
-        {({ match, ...rest }) => {
-          if (match) {
-            return <AuthorizedLayout match={match} {...rest} />
-          } else {
-            return null
-          }
+      <Route
+        render={({ location: { pathname, search, hash } }) => {
+          const hasSlash = pathname.slice(-1) === '/' && pathname !== '/'
+          return hasSlash ? <Redirect to={`${pathname.slice(0, -1)}${search}${hash}`} /> : children
         }}
-      </Route>
+      />
     </BrowserRouter>
+  )
+}
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/auth" component={UnauthorizedLayout} />
+        <Route path="/projects" component={AuthorizedLayout} />
+        <Redirect to="/projects" />
+      </Switch>
+    </Router>
   )
 }
 
