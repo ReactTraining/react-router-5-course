@@ -4,20 +4,9 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Router from './utils/Router'
 import UnauthorizedLayout from './layouts/UnauthorizedLayout'
 import AuthorizedLayout from './layouts/AuthorizedLayout'
-import { AuthUserProvider, useAuthUser } from './utils/AuthUser'
+import { AuthUserProvider } from './utils/AuthUser'
+import AuthorizedRoute from './utils/AuthorizedRoute'
 import './styles/main.scss'
-
-const AuthorizedRoute = ({ component, ...rest }) => {
-  const { logged } = useAuthUser()
-
-  if (logged === null) {
-    return <div>Loading...</div>
-  } else if (logged === false) {
-    return <Redirect to="/auth" push />
-  }
-
-  return <Route component={component} {...rest} />
-}
 
 const App = () => {
   return (
