@@ -5,14 +5,21 @@ import UnauthorizedLayout from './layouts/UnauthorizedLayout'
 import AuthorizedLayout from './layouts/AuthorizedLayout'
 import './styles/main.scss'
 
-const App = () => (
-  <BrowserRouter>
-    <Switch>
+const App = () => {
+  return (
+    <BrowserRouter>
       <Route path="/auth" component={UnauthorizedLayout} />
-      <Route path="/projects" component={AuthorizedLayout} />
-      <Redirect to="/projects" />
-    </Switch>
-  </BrowserRouter>
-)
+      <Route path="/projects">
+        {({ match, ...rest }) => {
+          if (match) {
+            return <AuthorizedLayout match={match} {...rest} />
+          } else {
+            return null
+          }
+        }}
+      </Route>
+    </BrowserRouter>
+  )
+}
 
 ReactDOM.render(<App />, document.getElementById('root'))
