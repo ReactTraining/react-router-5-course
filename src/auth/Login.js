@@ -15,8 +15,10 @@ const apiLogin = (username, password) => {
 }
 
 const Login = ({ history }) => {
-  const { setLogged } = useAuthUser()
+  const { setLogged, logged } = useAuthUser()
   const [errorMessage, setErrorMessage] = useState()
+
+  console.log(logged)
 
   function handleSubmit(e) {
     e.preventDefault()
