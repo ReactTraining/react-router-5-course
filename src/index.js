@@ -4,8 +4,20 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Router from './utils/Router'
 import UnauthorizedLayout from './layouts/UnauthorizedLayout'
 import AuthorizedLayout from './layouts/AuthorizedLayout'
+import { AuthUserProvider, useAuthUser } from './utils/AuthUser'
 import './styles/main.scss'
-import { AuthUserProvider } from './utils/AuthUser'
+
+const AuthorizedRoute = ({ component, ...rest }) => {
+  const { logged } = useAuthUser()
+
+  if (logged === null) {
+    return <div>Loading...</div>
+  } else if (logged === false) {
+    return <Redirect to="/auth" push />
+  }
+
+  return <Route component={component} {...rest} />
+}
 
 const App = () => {
   return (
@@ -13,7 +25,7 @@ const App = () => {
       <AuthUserProvider>
         <Switch>
           <Route path="/auth" component={UnauthorizedLayout} />
-          <Route path="/projects" component={AuthorizedLayout} />
+          <AuthorizedRoute path="/projects" component={AuthorizedLayout} />
           <Redirect to="/projects" />
         </Switch>
       </AuthUserProvider>
