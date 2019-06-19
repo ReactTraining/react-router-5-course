@@ -3,20 +3,34 @@ import Panel from '../ui/Panel'
 import Card from '../ui/Card'
 import { useAuthUser } from '../utils/AuthUser'
 
+// Fake API Network Call
+const apiLogin = (username, password) => {
+  return new Promise((resolve, reject) => {
+    if (username === 'react' && password === 'react') {
+      resolve()
+    } else {
+      reject()
+    }
+  })
+}
+
 const Login = ({ history }) => {
-  const { login } = useAuthUser()
+  const { setLogged } = useAuthUser()
   const [errorMessage, setErrorMessage] = useState()
 
   function handleSubmit(e) {
     e.preventDefault()
     const [usernameNode, passwordNode] = e.target.elements
 
-    if (usernameNode.value === 'react' && passwordNode.value === 'react') {
-      login()
-      history.push('/projects')
-    } else {
-      setErrorMessage('Invalid')
-    }
+    apiLogin(usernameNode.value, passwordNode.value)
+      .then(() => {
+        setLogged(true)
+        history.push('/projects')
+      })
+      .catch(() => {
+        setLogged(false)
+        setErrorMessage('Invalid')
+      })
   }
 
   return (
@@ -31,7 +45,7 @@ const Login = ({ history }) => {
           The username is <strong>react</strong> and the password is <strong>react</strong>
         </p>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <form onSubmit={handleSubmit} className="spacing">
+        <form className="spacing" onSubmit={handleSubmit}>
           <input type="text" placeholder="Username" required />
           <input type="password" placeholder="Password" required />
           <button type="submit" className="button">

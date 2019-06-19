@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import { useAuthUser } from '../utils/AuthUser'
 
 const AuthorizedPrimaryHeader = () => {
-  const { logout } = useAuthUser()
+  const { setLogged } = useAuthUser()
 
   return (
     <header className="authorized-primary-header">
@@ -19,7 +19,7 @@ const AuthorizedPrimaryHeader = () => {
         )}
       />
       <nav className="primary-nav">
-        <button className="logout text-light-tint" onClick={logout}>
+        <button onClick={() => setLogged(false)} className="logout text-light-tint">
           Logout
         </button>
         <div className="avatar" />
