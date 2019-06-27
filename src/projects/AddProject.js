@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Prompt } from 'react-router-dom'
+import { Link, Prompt } from 'react-router-dom'
 import Card from '../ui/Card'
 
 const AddProject = () => {
@@ -14,9 +14,12 @@ const AddProject = () => {
       <Prompt when={formIsDirty} message="Are you sure you want to leave this form before saving?" />
       <form className="spacing" onSubmit={handleSubmit}>
         <input onChange={() => setFormIsDirty(true)} type="text" placeholder="Project Name" required />
-        <button type="submit" className="button">
-          Add Project
-        </button>
+        <footer className="horizontal-spacing">
+          <button type="submit" className="button">
+            Add Project.
+          </button>
+          <Link to="/projects">Cancel</Link>
+        </footer>
       </form>
     </Card>
   )
