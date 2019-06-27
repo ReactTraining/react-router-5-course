@@ -13,7 +13,7 @@ const AddProject = () => {
         <input type="text" placeholder="Project Name" required />
         <footer className="horizontal-spacing">
           <button type="submit" className="button">
-            Add Project.
+            Add Project
           </button>
           <Link to="/projects">Cancel</Link>
         </footer>
