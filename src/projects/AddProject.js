@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Prompt } from 'react-router-dom'
-import Card from '../../ui/Card'
+import Card from '../ui/Card'
 
 const AddProject = () => {
   const [formIsDirty, setFormIsDirty] = useState(false)
@@ -11,7 +11,7 @@ const AddProject = () => {
   }
 
   return (
-    <Card style={{ minHeight: '20em' }}>
+    <Card style={{ minHeight: '15em' }}>
       <Prompt when={formIsDirty} message="Are you sure you want to leave this form before saving?" />
       <form className="spacing" onSubmit={handleSubmit}>
         <input onChange={() => setFormIsDirty(true)} type="text" placeholder="Project Name" required />
