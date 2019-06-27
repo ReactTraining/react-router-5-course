@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, Link } from 'react-router-dom'
 import ProjectContext from '../utils/ProjectContext'
 import ProjectSidebar from '../ui/ProjectSidebar'
 import Overview from '../projects/Overview'
@@ -27,8 +27,12 @@ const ProjectSubLayout = ({ match }) => {
       <div className="project-sub-layout">
         <ProjectSidebar />
         <div className="project-primary-content">
-          <nav className="project-nav">
+          <nav className="project-nav horizontal-spacing" style={{ color: 'white' }}>
             <span className="text-light-tint">{project.name}</span>
+            <span> : </span>
+            <Link to="/projects/add" className="text-light-tint">
+              Add Project
+            </Link>
           </nav>
           <main>
             <Switch>
