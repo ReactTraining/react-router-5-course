@@ -7,7 +7,6 @@ const AddProject = () => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log('submit')
   }
 
   return (
