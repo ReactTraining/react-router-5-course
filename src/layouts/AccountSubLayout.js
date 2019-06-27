@@ -5,7 +5,7 @@ import Tiles from '../ui/Tiles'
 import Card from '../ui/Card'
 import { getProjects } from '../utils/api'
 
-const AccountSubLayout = ({ history }) => {
+const AccountSubLayout = ({ match, history }) => {
   const [projects, setProjects] = useState(false)
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const AccountSubLayout = ({ history }) => {
               style={{ height: '14em', cursor: 'pointer' }}
               role="link"
               onClick={() => history.push('')}>
-              <Link className="block" to="#">
+              <Link className="block" to={`${match.url}/add`}>
                 Add Project
               </Link>
             </Card>
