@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, Prompt } from 'react-router-dom'
 import Card from '../ui/Card'
 
-const AddProject = () => {
+const AddProject = ({ location }) => {
   const [formIsDirty, setFormIsDirty] = useState(false)
 
   function handleSubmit(e) {
@@ -16,9 +16,9 @@ const AddProject = () => {
         <input onChange={() => setFormIsDirty(true)} type="text" placeholder="Project Name" required />
         <footer className="horizontal-spacing">
           <button type="submit" className="button">
-            Add Project.
+            Add Project
           </button>
-          <Link to="/projects">Cancel</Link>
+          <Link to={(location.state && location.state.cancelPathname) || '/projects'}>Cancel</Link>
         </footer>
       </form>
     </Card>

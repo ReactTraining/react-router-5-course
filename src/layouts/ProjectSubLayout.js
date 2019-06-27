@@ -8,7 +8,7 @@ import AuthenticationLayout from '../projects/authentication/AuthenticationLayou
 import DatabaseHome from '../projects/database/DatabaseHome'
 import DatabaseLayout from '../projects/database/DatabaseLayout'
 
-const ProjectSubLayout = ({ match }) => {
+const ProjectSubLayout = ({ match, pathname }) => {
   const [project, setProject] = useState(false)
   const { projectId } = match.params
 
@@ -30,7 +30,9 @@ const ProjectSubLayout = ({ match }) => {
           <nav className="project-nav horizontal-spacing" style={{ color: 'white' }}>
             <span className="text-light-tint">{project.name}</span>
             <span> : </span>
-            <Link to="/projects/add" className="text-light-tint">
+            <Link
+              to={{ pathname: '/projects/add', state: { cancelPathname: location.pathname } }}
+              className="text-light-tint">
               Add Project
             </Link>
           </nav>
