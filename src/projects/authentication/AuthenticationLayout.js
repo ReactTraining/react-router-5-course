@@ -4,6 +4,7 @@ import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
 import { PageHeaderTabs, Tab } from '../../ui/PageHeaderTabs'
 import Users from './Users'
+import AddUser from './AddUser'
 import SigninMethods from './SigninMethods'
 import Templates from './Templates'
 
@@ -19,6 +20,7 @@ const AuthenticationLayout = ({ match }) => {
       </PageHeader>
       <Panel>
         <Switch>
+          <Route path={`${match.path}/users/add-user`} component={AddUser} />
           <Route path={`${match.path}/users`} component={Users} />
           <Route path={`${match.path}/signin-method`} component={SigninMethods} />
           <Route path={`${match.path}/templates`} component={Templates} />
