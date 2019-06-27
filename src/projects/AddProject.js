@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Prompt } from 'react-router-dom'
 import Card from '../../ui/Card'
 
-const AddUser = () => {
+const AddProject = () => {
   const [formIsDirty, setFormIsDirty] = useState(false)
 
   function handleSubmit(e) {
@@ -14,14 +14,13 @@ const AddUser = () => {
     <Card style={{ minHeight: '20em' }}>
       <Prompt when={formIsDirty} message="Are you sure you want to leave this form before saving?" />
       <form className="spacing" onSubmit={handleSubmit}>
-        <input onChange={() => setFormIsDirty(true)} type="text" placeholder="Email" required />
-        <input onChange={() => setFormIsDirty(true)} type="password" placeholder="Password" required />
+        <input onChange={() => setFormIsDirty(true)} type="text" placeholder="Project Name" required />
         <button type="submit" className="button">
-          Add User
+          Add Project
         </button>
       </form>
     </Card>
   )
 }
 
-export default AddUser
+export default AddProject
