@@ -6,29 +6,32 @@
   min-height: 3em;
 }
 
-// .card {
-//   position: absolute;
-//   background-color: red;
-// }
+.animated-cards {
+  position: relative;
 
-// .page-transition {
-//   &-enter {
-//     opacity: 0;
-//     transform: translateX(-10em);
-//     transition: all 1s;
-//   }
-//   &-enter-active {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
+  > * {
+    position: absolute;
+    width: 100%;
+  }
+}
 
-//   &-exit {
-//     opacity: 1;
-//     transform: translateX(10em);
-//     transition: all 1s;
-//   }
-//   &-exit-active {
-//     opacity: 0;
-//     transform: translateX(0);
-//   }
-// }
+.animated-card {
+  &-exit {
+    opacity: 1;
+    transition: all 0.6s;
+  }
+  &-exit-active {
+    opacity: 0;
+    transform: translateY(3em);
+  }
+
+  &-enter {
+    opacity: 0;
+    transition: all 0.6s;
+    transform: translateY(-1em);
+  }
+  &-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -11,6 +11,7 @@ import Templates from './Templates'
 const AuthenticationLayout = ({ match, location }) => {
   return (
     <Fragment>
+      {match.url === location.pathname && <Redirect to={`${match.url}/users`} />}
       <PageHeader title="Authentication" useMaxWidth={false}>
         <PageHeaderTabs>
           <Tab to={`${match.url}/users`}>Users</Tab>
@@ -19,13 +20,13 @@ const AuthenticationLayout = ({ match, location }) => {
         </PageHeaderTabs>
       </PageHeader>
       <Panel>
-        <TransitionGroup>
-          <CSSTransition key={location.key} timeout={3000} classNames="page-transition">
+        <TransitionGroup className="animated-cards">
+          <CSSTransition key={location.key} timeout={600} classNames="animated-card">
             <Switch location={location}>
               <Route path={`${match.path}/users`} component={Users} />
               <Route path={`${match.path}/signin-method`} component={SigninMethods} />
               <Route path={`${match.path}/templates`} component={Templates} />
-              <Redirect to={`${match.url}/users`} />
+              <Route component={() => null} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
