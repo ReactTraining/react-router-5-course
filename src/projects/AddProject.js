@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, Prompt } from 'react-router-dom'
 import Card from '../ui/Card'
 
-const AddProject = ({ location }) => {
-  const [isDirty, setIsDirty] = useState(false)
-
+const AddProject = () => {
   function handleSubmit(e) {
     e.preventDefault()
   }
@@ -18,7 +16,7 @@ const AddProject = ({ location }) => {
           <button type="submit" className="button">
             Add Project
           </button>
-          <Link to={(location.state && location.state.cancelPathname) || '/projects'}>Cancel</Link>
+          <Link to="/projects">Cancel</Link>
         </footer>
       </form>
     </Card>
