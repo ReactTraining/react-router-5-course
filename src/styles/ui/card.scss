@@ -5,3 +5,30 @@
   padding: 1em;
   min-height: 3em;
 }
+
+// .card {
+//   position: absolute;
+//   background-color: red;
+// }
+
+// .page-transition {
+//   &-enter {
+//     opacity: 0;
+//     transform: translateX(-10em);
+//     transition: all 1s;
+//   }
+//   &-enter-active {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+
+//   &-exit {
+//     opacity: 1;
+//     transform: translateX(10em);
+//     transition: all 1s;
+//   }
+//   &-exit-active {
+//     opacity: 0;
+//     transform: translateX(0);
+//   }
+// }

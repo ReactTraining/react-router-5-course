@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
 import { PageHeaderTabs, Tab } from '../../ui/PageHeaderTabs'
@@ -7,7 +8,7 @@ import Users from './Users'
 import SigninMethods from './SigninMethods'
 import Templates from './Templates'
 
-const AuthenticationLayout = ({ match }) => {
+const AuthenticationLayout = ({ match, location }) => {
   return (
     <Fragment>
       <PageHeader title="Authentication" useMaxWidth={false}>
@@ -18,12 +19,16 @@ const AuthenticationLayout = ({ match }) => {
         </PageHeaderTabs>
       </PageHeader>
       <Panel>
-        <Switch>
-          <Route path={`${match.path}/users`} component={Users} />
-          <Route path={`${match.path}/signin-method`} component={SigninMethods} />
-          <Route path={`${match.path}/templates`} component={Templates} />
-          <Redirect to={`${match.url}/users`} />
-        </Switch>
+        <TransitionGroup>
+          <CSSTransition key={location.key} timeout={3000} classNames="page-transition">
+            <Switch location={location}>
+              <Route path={`${match.path}/users`} component={Users} />
+              <Route path={`${match.path}/signin-method`} component={SigninMethods} />
+              <Route path={`${match.path}/templates`} component={Templates} />
+              <Redirect to={`${match.url}/users`} />
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
       </Panel>
     </Fragment>
   )
