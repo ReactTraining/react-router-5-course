@@ -8,7 +8,7 @@ import Users from './Users'
 import SigninMethods from './SigninMethods'
 import Templates from './Templates'
 
-const AuthenticationLayout = ({ match }) => {
+const AuthenticationLayout = ({ match, location }) => {
   return (
     <Fragment>
       <PageHeader title="Authentication" useMaxWidth={false}>
@@ -19,12 +19,16 @@ const AuthenticationLayout = ({ match }) => {
         </PageHeaderTabs>
       </PageHeader>
       <Panel>
-        <Switch>
-          <Route path={`${match.path}/users`} component={Users} />
-          <Route path={`${match.path}/signin-method`} component={SigninMethods} />
-          <Route path={`${match.path}/templates`} component={Templates} />
-          <Redirect to={`${match.url}/users`} />
-        </Switch>
+        <TransitionGroup>
+          <CSSTransition key={location.key} timeout={2000} classNames="animate">
+            <Switch location={location}>
+              <Route path={`${match.path}/users`} component={Users} />
+              <Route path={`${match.path}/signin-method`} component={SigninMethods} />
+              <Route path={`${match.path}/templates`} component={Templates} />
+              {/* <Redirect to={`${match.url}/users`} /> */}
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
       </Panel>
     </Fragment>
   )
