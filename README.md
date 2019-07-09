@@ -19,12 +19,14 @@ npm start
 
 Then go to [localhost:8000](http://localhost:8000)
 
-## Each Branch is a finished lesson
+## Each lesson is a Git Branch
 
-Branch names are minified for easy typing:
+To view the code for a given lesson, checkout the appropriate branch name. The branch will have the finished code from that lesson.
 
-- `01-basics` - JSX Routing with `BrowserRouter` and `Route`
-- `02-basics` - Route Matching - Inclusive vs Exclusive (exact) and Switch
+Branch names are minimal for easy typing:
+
+- **01-basics** - JSX Routing with `BrowserRouter` and `Route`
+- **02-basics** - Route Matching - Inclusive vs Exclusive (exact) and Switch
 - **03-basics** - `Link` (anchors)
 - **04-basics** - `BrowserRouter` vs `HashRouter`
 - **05-basics** - Dynamic (Parameter) Matching
