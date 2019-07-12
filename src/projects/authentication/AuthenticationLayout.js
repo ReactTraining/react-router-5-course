@@ -20,7 +20,7 @@ const AuthenticationLayout = ({ match, location }) => {
       </PageHeader>
       <Panel>
         <TransitionGroup>
-          <CSSTransition key={location.key} timeout={2000} classNames="animate">
+          <CSSTransition key={location.key} timeout={20000} classNames="animate">
             <Switch location={location}>
               <Route path={`${match.path}/users`} component={Users} />
               <Route path={`${match.path}/signin-method`} component={SigninMethods} />
