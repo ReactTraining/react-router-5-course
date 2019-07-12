@@ -11,19 +11,7 @@ import Templates from './Templates'
 const AuthenticationLayout = ({ match, location }) => {
   return (
     <Fragment>
-      {/*
-        In the video, I somewhat glossed over why these are only the same value before
-        the redirect and then they are different. The reason is because `match.url` only
-        has what the URL value is up to the route that matched this component. So in
-        other words, the route that matched for `AuthenticationLayout` is
-        `/projects/react-training/authentication`. The `match.url` here will only be
-        that value even if the patch is much longer. The `location.pathname` is the
-        true representation of the full path in the browser. Therefore, if they are the
-        same, that indicates we are at `/projects/react-training/authentication` and
-        need to do a redirect.
-      */}
       {match.url === location.pathname && <Redirect to={`${match.url}/users`} />}
-
       <PageHeader title="Authentication" useMaxWidth={false}>
         <PageHeaderTabs>
           <Tab to={`${match.url}/users`}>Users</Tab>
