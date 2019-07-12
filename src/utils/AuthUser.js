@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Cookies from 'js-cookie'
 
 const AuthUserContext = React.createContext()
@@ -8,17 +8,15 @@ const cookieName = 'RR5CourseLogged'
 
 export const AuthUserProvider = ({ children }) => {
   const cookieLogged = Cookies.getJSON(cookieName)
-  const [logged, setLoggedState] = useState(cookieLogged ? cookieLogged.logged : false)
+  const [logged, setLogged] = useState(cookieLogged ? cookieLogged.logged : false)
 
-  const setLogged = logged => {
+  useEffect(() => {
     if (logged) {
       Cookies.set(cookieName, { logged: true })
     } else {
       Cookies.remove(cookieName)
     }
-
-    setLoggedState(logged)
-  }
+  }, [logged])
 
   return <AuthUserContext.Provider value={{ logged, setLogged }}>{children}</AuthUserContext.Provider>
 }
