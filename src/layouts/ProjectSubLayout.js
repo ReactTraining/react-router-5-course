@@ -34,7 +34,7 @@ const ProjectSubLayout = ({ match, location }) => {
               to={{
                 pathname: '/projects/add',
                 state: {
-                  cancelPathname: location.pathname,
+                  returnPathname: location.pathname,
                 },
               }}
               className="text-light-tint">
