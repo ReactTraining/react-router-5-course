@@ -10,7 +10,7 @@ This is not the real Firebase, this is what we're making:
 
 ![Animated Demo](./firebase.gif)
 
-## Install
+## Download and Install
 
 ```bash
 npm install
@@ -19,9 +19,19 @@ npm start
 
 Then go to [localhost:8000](http://localhost:8000)
 
-## Each lesson is a Git Branch
+> Be sure to see notes on Lesson Branches below...
 
-To view the code for a given lesson, checkout the appropriate branch name. The branch will have the finished code from that lesson.
+## Each Lesson is a Git Branch
+
+To view the code for a given lesson, _checkout_ the appropriate branch name. The branch will have the finished code from that lesson.
+
+### Installing lesson branches
+
+All the branches are checked out to your local machine automatically when you do `npm install`. Just do a `git branch` to verify and see all branches after.
+
+To view a branch: `git checkout [branch-name]`
+
+<hr />
 
 Branch names are minimal for easy typing:
 
