@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
+import SidebarNavItem from './SidebarNavItem'
 
 const ProjectSidebar = ({ match }) => (
   <aside className="project-sidebar">
@@ -31,18 +32,9 @@ const ProjectSidebar = ({ match }) => (
         </NavLink>
       </div>
     </nav>
-    <nav className="spacing-small">
-      <h1 className="heading-4">Quality</h1>
-      <p>Crashlytics, Performance, Test Lab</p>
-    </nav>
-    <nav className="spacing-small">
-      <h1 className="heading-4">Analytics</h1>
-      <p>Dashboard, Events, Conversions, Audiences</p>
-    </nav>
-    <nav className="spacing-small">
-      <h1 className="heading-4">Grow</h1>
-      <p>Predictions, A/B Testing, Cloud Messaging</p>
-    </nav>
+    <SidebarNavItem title="Quality" description="Crashlytics, Performance, Test Lab"></SidebarNavItem>
+    <SidebarNavItem title="Analytics" description="Dashboard, Events, Conversions, Audiences"></SidebarNavItem>
+    <SidebarNavItem title="Grow" description="Predictions, A/B Testing, Cloud Messaging"></SidebarNavItem>
   </aside>
 )
 

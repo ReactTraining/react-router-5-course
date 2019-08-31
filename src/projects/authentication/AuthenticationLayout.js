@@ -26,7 +26,6 @@ const AuthenticationLayout = ({ match, location }) => {
               <Route path={`${match.path}/users`} component={Users} />
               <Route path={`${match.path}/signin-method`} component={SigninMethods} />
               <Route path={`${match.path}/templates`} component={Templates} />
-              <Route component={() => null} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

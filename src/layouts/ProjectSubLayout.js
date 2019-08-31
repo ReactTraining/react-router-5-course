@@ -7,6 +7,7 @@ import { getProject } from '../utils/api'
 import AuthenticationLayout from '../projects/authentication/AuthenticationLayout'
 import DatabaseHome from '../projects/database/DatabaseHome'
 import DatabaseLayout from '../projects/database/DatabaseLayout'
+import ProjectNavbar from '../ui/ProjectNavbar'
 
 const ProjectSubLayout = ({ match, pathname }) => {
   const [project, setProject] = useState(false)
@@ -27,15 +28,7 @@ const ProjectSubLayout = ({ match, pathname }) => {
       <div className="project-sub-layout">
         <ProjectSidebar />
         <div className="project-primary-content">
-          <nav className="project-nav horizontal-spacing" style={{ color: 'white' }}>
-            <span className="text-light-tint">{project.name}</span>
-            <span> : </span>
-            <Link
-              to={{ pathname: '/projects/add', state: { cancelPathname: location.pathname } }}
-              className="text-light-tint">
-              Add Project
-            </Link>
-          </nav>
+          <ProjectNavbar projectName={project.name} />
           <main>
             <Switch>
               <Route path={`${match.path}/overview`} component={Overview} />

@@ -9,9 +9,11 @@ import Rules from './Rules'
 import DataIndexes from './DataIndexes'
 
 const DatabaseLayout = ({ match, location }) => {
+  const shouldRedirect = match.url === location.pathname
+
   return (
     <Fragment>
-      {match.url === location.pathname && <Redirect to={`${match.url}/data`} />}
+      {shouldRedirect && <Redirect to={`${match.url}/data`} />}
       <PageHeader title="Database" useMaxWidth={false}>
         <PageHeaderTabs>
           <Tab to={`${match.url}/data`}>Data</Tab>
