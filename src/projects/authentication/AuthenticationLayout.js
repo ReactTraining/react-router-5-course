@@ -4,7 +4,7 @@ import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
 import { PageHeaderTabs, Tab } from '../../ui/PageHeaderTabs'
 import Users from './Users'
-import SigninMethods from './SigninMethods'
+import SigninMethods from './SignInMethods'
 import Templates from './Templates'
 
 const AuthenticationLayout = ({ match }) => {
