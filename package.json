@@ -36,10 +36,10 @@
     "js-cookie": "^2.2.0",
     "promise": "^8.0.3",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-flex-columns": "^0.4.2",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.1.2",
     "react-transition-group": "^4.1.1"
   }
 }
