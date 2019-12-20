@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, useRouteMatch, useLocation } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
@@ -8,7 +8,10 @@ import Users from './Users'
 import SigninMethods from './SigninMethods'
 import Templates from './Templates'
 
-const AuthenticationLayout = ({ match, location }) => {
+const AuthenticationLayout = () => {
+  const match = useRouteMatch()
+  const location = useLocation()
+
   return (
     <Fragment>
       {match.url === location.pathname && <Redirect to={`${match.url}/users`} />}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Panel from '../ui/Panel'
 import Card from '../ui/Card'
+import { useHistory } from 'react-router-dom'
 import { useAuthUser } from '../utils/AuthUser'
 
 // Fake API Network Call
@@ -14,9 +15,10 @@ const apiLogin = (username, password) => {
   })
 }
 
-const Login = ({ history }) => {
+const Login = () => {
   const { setLogged } = useAuthUser()
   const [errorMessage, setErrorMessage] = useState()
+  const history = useHistory()
 
   function handleSubmit(e) {
     e.preventDefault()

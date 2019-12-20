@@ -4,7 +4,7 @@ import AuthorizedPrimaryHeader from '../ui/AuthorizedPrimaryHeader'
 import AccountSubLayout from './AccountSubLayout'
 import ProjectSubLayout from './ProjectSubLayout'
 
-const AuthorizedLayout = ({ match }) => (
+const AuthorizedLayout = () => (
   <div className="app authorized-layout">
     <AuthorizedPrimaryHeader />
     <Switch>

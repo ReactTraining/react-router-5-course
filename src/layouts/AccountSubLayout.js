@@ -6,7 +6,7 @@ import Card from '../ui/Card'
 import AddProject from '../projects/AddProject'
 import { getProjects } from '../utils/api'
 
-const AccountSubLayout = ({ match, history }) => {
+const AccountSubLayout = ({ history }) => {
   const [projects, setProjects] = useState(false)
 
   useEffect(() => {
