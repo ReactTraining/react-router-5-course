@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.config.dev.js",
     "build": "webpack --mode production --config config/webpack.config.production.js",
-    "postinstall": "sh getbranches.sh"
+    "branches": "sh getbranches.sh",
+    "postinstall": "npm run branches"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

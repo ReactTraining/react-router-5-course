@@ -23,7 +23,7 @@ To view the code for a given lesson, _checkout_ the appropriate branch name. The
 
 ### Installing lesson branches
 
-All the branches are checked out to your local machine automatically when you do `npm install`. Just do a `git branch` to verify and see all branches after.
+All the branches are checked out to your local machine automatically when you do `npm install`. Just do a `git branch` to verify and see all branches after. If they didn't appear, try running `npm run branches` to download all the branches.
 
 To view a branch: `git checkout [branch-name]`
 
