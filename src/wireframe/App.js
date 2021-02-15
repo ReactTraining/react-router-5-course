@@ -51,7 +51,6 @@ const DashboardLayout = () => (
         <Switch>
           <Route path="/dashboard/settings" component={SettingsPage} />
           <Route path="/dashboard/search" component={SearchResultsPage} />
-          <Route component={NotFound} />
         </Switch>
       </main>
     </div>
