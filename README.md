@@ -1,12 +1,16 @@
 # React Router 5 Course Material
 
-React Router 5 is out at we have this course so you can learn all about it. The course covers basic and advanced topics. We'll be building a Firebase-looking app that has complex nested layouts and interesting problems to solve.
+React Router 5 is out and we have created this course so you can learn all about it. The course covers basic and advanced topics. We'll be building a Firebase-looking app that has complex nested layouts and interesting problems to solve.
 
 ![Animated Demo](./firebase.gif)
 
+## What's New?
+
+If you're wondering what's new in React Router 5? Not a lot, except internal optimizations and fixes for React 16.x. So you could also think of this as a React Router 4 course since the API is the same. [See more info on the React Router 5 release](https://reacttraining.com/blog/react-router-v5/).
+
 ## Download and Install
 
-If you're wondering what's new in React Router 5? Not a lot except internal optimizations and fixes for React 16.x. So you could also think of this as a React Router 4 course since the API is the same. [See more info on the React Router 5 release](https://reacttraining.com/blog/react-router-v5/)
+After downloading the repository from Github, enter the following commands into your command line from the project folder:
 
 ```bash
 npm install
