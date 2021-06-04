@@ -39,6 +39,7 @@
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2",
     "react-flex-columns": "^0.4.2",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-transition-group": "^4.1.1"
   }
 }
