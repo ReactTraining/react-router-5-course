@@ -4,7 +4,7 @@ import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
 import { PageHeaderTabs, Tab } from '../../ui/PageHeaderTabs'
 import Users from './Users'
-import SigninMethods from './SigninMethods'
+import SignInMethods from './SignInMethods'
 import Templates from './Templates'
 
 const AuthenticationLayout = ({ match }) => {
@@ -20,7 +20,7 @@ const AuthenticationLayout = ({ match }) => {
       <Panel>
         <Switch>
           <Route path={`${match.path}/users`} component={Users} />
-          <Route path={`${match.path}/signin-method`} component={SigninMethods} />
+          <Route path={`${match.path}/signin-method`} component={SignInMethods} />
           <Route path={`${match.path}/templates`} component={Templates} />
           <Redirect to={`${match.url}/users`} />
         </Switch>
