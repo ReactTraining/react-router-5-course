@@ -5,7 +5,7 @@ import Panel from '../../ui/Panel'
 import PageHeader from '../../ui/PageHeader'
 import { PageHeaderTabs, Tab } from '../../ui/PageHeaderTabs'
 import Users from './Users'
-import SigninMethods from './SigninMethods'
+import SignInMethods from './SignInMethods'
 import Templates from './Templates'
 
 const AuthenticationLayout = ({ match, location }) => {
@@ -24,7 +24,7 @@ const AuthenticationLayout = ({ match, location }) => {
           <CSSTransition key={location.key} timeout={600} classNames="animated-card">
             <Switch location={location}>
               <Route path={`${match.path}/users`} component={Users} />
-              <Route path={`${match.path}/signin-method`} component={SigninMethods} />
+              <Route path={`${match.path}/signin-method`} component={SignInMethods} />
               <Route path={`${match.path}/templates`} component={Templates} />
             </Switch>
           </CSSTransition>
